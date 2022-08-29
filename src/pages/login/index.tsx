@@ -1,8 +1,15 @@
-import { Teste } from "./styled";
+import { useContext } from "react";
+import { ChooseThemeContext } from "../../context/chooseTheme";
+
+import { Wrapper } from "./styled";
 
 export function Login() {
-
-    return (
-        <Teste>OOI</Teste>
-    )
+  const { isDarkTheme, setIsDarkTheme } = useContext(ChooseThemeContext);
+  return (
+    <Wrapper>
+      <button onClick={() => {
+        setIsDarkTheme(!isDarkTheme)
+      }}> tema </button>
+    </Wrapper>
+  );
 }

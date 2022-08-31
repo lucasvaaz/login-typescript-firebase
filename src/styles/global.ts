@@ -6,5 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         transition: 500ms;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body { 
+        font-family: 'Nunito', sans-serif;
     }
 `

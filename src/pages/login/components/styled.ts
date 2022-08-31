@@ -2,24 +2,12 @@ import styled from "styled-components";
 import { GiMountains } from "react-icons/gi";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
-export const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  background-color: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.primaryText};
-`;
-export const ImgContainer = styled.div`
-  width: 50%;
-  height: 100vh;
-`;
-
 export const LoginContainer = styled.main`
   padding: 5rem;
   width: 50%;
 `;
 
-export const Header = styled.div`
+export const HeaderLogo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,10 +32,6 @@ export const Header = styled.div`
     background-color: ${(props) => props.theme.secundaryLight};
   }
 `;
-
-
-
-////////////////////////////ICONS//////////////////////////////
 
 export const IconLogo = styled(GiMountains)`
   font-size: 3rem;
@@ -76,5 +60,3 @@ export const LightIcon = styled(MdLightMode)`
     color: ${(props) => props.theme.secundaryDark};
   }
 `;
-
-////////////////////////////ICONS//////////////////////////////

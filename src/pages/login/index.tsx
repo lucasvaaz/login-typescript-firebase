@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { ChooseThemeContext } from "../../context/chooseTheme";
 
-import { DarkIcon, Header, IconLogo, ImgContainer, LightIcon, LoginContainer, Wrapper } from "./styled";
+import { ImgContainer, Wrapper } from "./styled";
 
 import imgDark from "../../assets/imgDark.jpg";
 import imgLight from "../../assets/imgLight.jpg";
+import { Header } from "./components/header";
 
 
 
@@ -20,21 +21,11 @@ export function Login() {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-      ></ImgContainer>
+      >
 
-      <LoginContainer>
+      </ImgContainer>
 
-          <Header>
-            <div>
-            <IconLogo /> 
-            <h2>MOUNTAIN ADVENTURE</h2>
-            </div>
-            <span onClick={() => setIsDarkTheme(!isDarkTheme)}>
-            {isDarkTheme ? <LightIcon /> : <DarkIcon />}
-            </span>
-          </Header>
-        
-      </LoginContainer>
+     <Header />
 
       
     </Wrapper>

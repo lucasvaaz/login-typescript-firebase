@@ -3,8 +3,7 @@ import { GiMountains } from "react-icons/gi";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export const LoginContainer = styled.main`
-  padding: 5rem;
-  width: 50%;
+  width: 100%;
 `;
 
 export const HeaderLogo = styled.div`
@@ -19,6 +18,7 @@ export const HeaderLogo = styled.div`
 
     h3 { 
         color: ${(props) => props.theme.primaryText};
+        font-weight: 200;
         margin-left: 0.5rem;
     }
   }

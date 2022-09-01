@@ -10,5 +10,7 @@ export const lightTheme = {
     primaryText: '#242424',
     secundaryText: '#F2F2F2',
 
-    warning: '#a13820'
+    warning: '#a13820',
+
+    divider: '#9999'
 }   

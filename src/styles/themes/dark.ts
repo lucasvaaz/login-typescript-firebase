@@ -10,6 +10,8 @@ export const darkTheme = {
     primaryText: '#F2F2F2',
     secundaryText: '#242424',
 
-    warning: '#f74c22'
+    warning: '#f74c22',
+
+    divider: '#8888'
 
 }

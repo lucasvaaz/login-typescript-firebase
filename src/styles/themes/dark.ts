@@ -3,15 +3,20 @@ export const darkTheme = {
     primaryDark: '#8c351f',
     
     secundaryLight: '#00C8A0',
-    secundaryDark: '#4E8074',
+    secundaryDark: '#017a5e',
 
     background: '#201a32',
 
-    primaryText: '#F2F2F2',
-    secundaryText: '#242424',
+    primaryText: '#c9c7c7',
+    secundaryText: '#383838',
+    buttonText: '#ebebeb',
 
     warning: '#f74c22',
 
-    divider: '#8888'
+    divider: '#8888',
+
+    inputText: '#232323',
+
+    disabled: '#013b2d'
 
 }

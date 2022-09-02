@@ -1,16 +1,21 @@
 export const lightTheme = {
-    primaryLight: '#117B8F',
-    primaryDark: '#083A44',
-    
-    secundaryLight: '#FB9038',
-    secundaryDark: '#fa7305',
+    primaryLight: '#FB9038',
+    primaryDark: '#fa7305',
+
+    secundaryLight: '#117B8F',
+    secundaryDark: '#015566',
 
     background: '#ededed',
 
-    primaryText: '#242424',
-    secundaryText: '#F2F2F2',
-
+    primaryText: '#383838',
+    secundaryText: '#c9c7c7',
+    buttonText: '#c9c7c7',
+    
     warning: '#a13820',
 
-    divider: '#9999'
+    divider: '#9999',
+
+    inputText: '#232323',
+
+    disabled: '#083A44'
 }   

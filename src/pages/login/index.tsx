@@ -8,6 +8,8 @@ import {
   LoginContent,
   Wrapper,
   LoginSocial,
+  FacebookIcon,
+  GoogleIcon,
 } from "./styled";
 
 import imgDark from "../../assets/imgDark.jpg";
@@ -48,14 +50,23 @@ export function Login() {
           </FormLogin>
 
           <Register>
-          <p>
-            Ainda não tem uma conta? <a href="#"> Registre-se. </a>
+            <p>
+              Ainda não tem uma conta? <a href="#"> Registre-se. </a>
             </p>
-            </Register>
+          </Register>
 
-            <LoginSocial>
+          <LoginSocial>
+            
+            <div>
               
-            </LoginSocial>
+              <FacebookIcon />
+              <h3>Login com facebook</h3>
+            </div>
+            <div>
+              <GoogleIcon />
+              <h3>Login com google</h3>
+            </div>
+          </LoginSocial>
         </LoginContent>
       </div>
     </Wrapper>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { BsGoogle, BsFacebook } from "react-icons/bs";
+
 export const Wrapper = styled.div`
   height: 100vh;
   background-color: ${(props) => props.theme.background};
@@ -106,9 +108,44 @@ export const Register = styled.div`
       color: ${(props) => props.theme.secundaryDark};
     }
   }
-   
 `;
 
-export const LoginSocial = styled.div`
+export const LoginSocial = styled.span`
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  display: flex;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: ${(props) => props.theme.google};
+    
+
+    &:first-child {
+      background-color: ${(props) => props.theme.facebook};
+    }
+
+    h3 {
+      color: ${(props) => props.theme.buttonText}
+    }
+  }
+`;
+
+export const GoogleIcon = styled(BsGoogle)`
+  width: 3rem;
+  font-size: 1.4rem;
+  color: ${(props) => props.theme.buttonText};
   
-`
+
+`;
+
+export const FacebookIcon = styled(BsFacebook)`
+  width: 3rem;
+  font-size: 1.4rem;
+  color: ${(props) => props.theme.buttonText};
+`;

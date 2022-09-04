@@ -17,6 +17,9 @@ export const darkTheme = {
 
     inputText: '#232323',
 
-    disabled: '#013b2d'
+    disabled: '#013b2d',
+
+    facebook: '#0476E8',
+    google: '#ea4034'
 
 }

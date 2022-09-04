@@ -17,5 +17,8 @@ export const lightTheme = {
 
     inputText: '#232323',
 
-    disabled: '#083A44'
+    disabled: '#083A44',
+
+    facebook: '#0366c9',
+    google: '#b91e13'
 }   

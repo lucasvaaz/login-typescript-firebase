@@ -43,7 +43,6 @@ export const FormLogin = styled.form`
     padding: 0.7rem;
     border: 2px solid ${(props) => props.theme.secundaryText};
 
-
     &:focus {
       outline: 2px solid ${(props) => props.theme.secundaryLight};
       border: none;
@@ -88,7 +87,28 @@ export const FormLogin = styled.form`
 
     &:hover {
       color: ${(props) => props.theme.secundaryDark};
-      
     }
   }
 `;
+
+export const Register = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: ${(props) => props.theme.secundaryLight};
+
+    &:hover {
+      color: ${(props) => props.theme.secundaryDark};
+    }
+  }
+   
+`;
+
+export const LoginSocial = styled.div`
+  
+`

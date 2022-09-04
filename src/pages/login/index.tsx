@@ -1,7 +1,14 @@
 import { useContext } from "react";
 import { ChooseThemeContext } from "../../context/chooseTheme";
 
-import { FormLogin, ImgContainer, LoginContent, Wrapper } from "./styled";
+import {
+  Register,
+  FormLogin,
+  ImgContainer,
+  LoginContent,
+  Wrapper,
+  LoginSocial,
+} from "./styled";
 
 import imgDark from "../../assets/imgDark.jpg";
 import imgLight from "../../assets/imgLight.jpg";
@@ -28,20 +35,27 @@ export function Login() {
           </div>
 
           <FormLogin>
-            
-              <label htmlFor="email">email</label>
-              <input id="email" type="text" />
-           
+            <label htmlFor="email">email</label>
+            <input id="email" type="text" />
 
-            
-              <label htmlFor="password">senha</label>
-              <input id="password" type="password" />
-              <a href="#">Esqueci minha senha</a>
-            
+            <label htmlFor="password">senha</label>
+            <input id="password" type="password" />
+            <a href="#">Esqueci minha senha</a>
+
             <div>
-              <button type="submit" > ENTRAR </button>
+              <button type="submit"> ENTRAR </button>
             </div>
           </FormLogin>
+
+          <Register>
+          <p>
+            Ainda não tem uma conta? <a href="#"> Registre-se. </a>
+            </p>
+            </Register>
+
+            <LoginSocial>
+              
+            </LoginSocial>
         </LoginContent>
       </div>
     </Wrapper>

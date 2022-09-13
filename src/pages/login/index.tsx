@@ -10,6 +10,7 @@ import {
   LoginSocial,
   FacebookIcon,
   GoogleIcon,
+  Divider,
 } from "./styled";
 
 import imgDark from "../../assets/imgDark.jpg";
@@ -55,16 +56,21 @@ export function Login() {
             </p>
           </Register>
 
+          <Divider>
+             OU
+            </Divider>
+
           <LoginSocial>
+            
             
             <div>
               
               <FacebookIcon />
-              <h3>Login com facebook</h3>
+              <h3>Entre com facebook</h3>
             </div>
             <div>
               <GoogleIcon />
-              <h3>Login com google</h3>
+              <h3>Entre com google</h3>
             </div>
           </LoginSocial>
         </LoginContent>

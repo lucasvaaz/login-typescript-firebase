@@ -118,13 +118,21 @@ export const LoginSocial = styled.span`
 
   div {
     display: flex;
+    width: 45%;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem;
+    padding: 0.6rem;
     border-radius: 0.5rem;
     cursor: pointer;
     background-color: ${(props) => props.theme.google};
     
+    &:hover {
+      filter: brightness(1.1)
+    }
+
+    &:active{
+      filter: brightness(1.2)
+    }
 
     &:first-child {
       background-color: ${(props) => props.theme.facebook};
@@ -149,3 +157,26 @@ export const FacebookIcon = styled(BsFacebook)`
   font-size: 1.4rem;
   color: ${(props) => props.theme.buttonText};
 `;
+
+
+export const Divider = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+
+  &::before, ::after {
+    content: '';
+  flex: 1;
+  border-bottom: 1px solid ${(props) => props.theme.divider};
+  }
+
+  &::before {
+    margin-right: 0.5rem;
+  }
+
+  &::after {
+    margin-left: 0.5rem;
+  }
+
+`

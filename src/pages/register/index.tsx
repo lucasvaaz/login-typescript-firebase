@@ -2,8 +2,8 @@
 
 export function Register(){
     return (
-        <div>
-            
-        </div>
+       <div>
+
+       </div>
     )   
 }

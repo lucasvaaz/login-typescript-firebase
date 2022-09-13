@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ChooseThemeContext } from "../../context/chooseTheme";
+import { Link } from "react-router-dom"
 
 import {
   Register,
@@ -52,7 +53,7 @@ export function Login() {
 
           <Register>
             <p>
-              Ainda não tem uma conta? <a href="#"> Registre-se. </a>
+              Ainda não tem uma conta? <Link to='/register'> Registre-se. </Link>
             </p>
           </Register>
 

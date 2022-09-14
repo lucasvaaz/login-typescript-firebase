@@ -8,7 +8,7 @@ export function Router() {
     <>
       <Routes>
         <Route path="/" element={<DefaultLayout />} >
-        <Route path="/login" element={<Login />} />
+        <Route  path="/login"  element={<Login />} />
       
         <Route path="/register" element={<Register />} />
         </Route>

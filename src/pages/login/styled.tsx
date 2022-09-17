@@ -150,3 +150,8 @@ export const Divider = styled.div`
   }
 
 `
+
+export const WarningLogin = styled.h5`
+  color: ${(props) => props.theme.warning};
+  font-weight: 500;
+`

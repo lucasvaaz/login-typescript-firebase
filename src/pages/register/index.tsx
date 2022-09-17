@@ -2,11 +2,11 @@ import { useState } from "react";
 import { FormRegister } from "./styled";
 
 export function Register() {
-  const [showPassword, setShowPassword] = useState(true)
+  
   return (
     <>
       <div>
-        <h1>register</h1>
+        <h1>cadastrar</h1>
       </div>
       <FormRegister>
         <label htmlFor="name">Nome:</label>

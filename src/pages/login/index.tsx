@@ -3,10 +3,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
-interface ShowModalProps {
-  children: React.ReactNode | React.ReactNode[];
-}
-
 import {
   Divider,
   FacebookIcon,
@@ -14,11 +10,18 @@ import {
   GoogleIcon,
   LoginSocial,
   Register,
+  WarningLogin,
 } from "./styled";
 
 const newValidationSchema = zod.object({
-  emailLogin: zod.string().email({ message: "Email invalido" }),
+  emailLogin: zod.string().email({ message: "Digite um email válido" }),
+  passwordLogin: zod.string().min(6)
 });
+
+interface LoginValidation {
+  emailLogin: string;
+  passwordLogin: string;
+}
 
 export function Login() {
   const {
@@ -26,16 +29,21 @@ export function Login() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({
+  } = useForm<LoginValidation>({
     resolver: zodResolver(newValidationSchema),
+    defaultValues: {
+      emailLogin: "",
+      passwordLogin: "",
+    }
   });
 
-  function handleSubmitLogin(data: any) {
+  function handleSubmitLogin(data: LoginValidation) {
     console.log(data);
   }
 
   const loginAndPassword = watch("emailLogin" && "passwordLogin");
   const isSubmitDisabled = !loginAndPassword;
+
   return (
     <>
       <div>
@@ -45,9 +53,9 @@ export function Login() {
       <FormLogin onSubmit={handleSubmit(handleSubmitLogin)}>
         <label htmlFor="emailLogin">email</label>
         <input id="emailLogin" type="text" {...register("emailLogin")} />
-
-        {errors.emailLogin && <h5> {errors.emailLogin?.message} </h5>}
-
+        <div>
+          <WarningLogin> {errors.emailLogin?.message} </WarningLogin>
+        </div>
         <label htmlFor="passwordLogin">senha</label>
         <input
           id="passwordLogin"

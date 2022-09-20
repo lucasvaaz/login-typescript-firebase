@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 export const FormRegister = styled.form`
+
+
+  
+
   input[type=text] {
     width: 100%;
-    height: 2.5rem;
+    height: 2.3rem;
     font-size: 1rem;
     font-weight: 200;
     color: ${(props) => props.theme.inputText};
@@ -21,7 +25,7 @@ export const FormRegister = styled.form`
 
   input[type=password] {
     width: 100%;
-    height: 2.5rem;
+    height: 2.3rem;
     font-size: 1rem;
     font-weight: 200;
     color: ${(props) => props.theme.inputText};
@@ -67,7 +71,7 @@ export const FormRegister = styled.form`
   label {
     display: block;
     font-weight: 300;
-    padding: 2rem 0 0 0;
+    padding: 0.9rem 0 0 0;
   }
 
   a {
@@ -80,5 +84,9 @@ export const FormRegister = styled.form`
     }
   }
  
+  p {
+    font-size: 0.8rem;
+    color: ${(props) => props.theme.warning};
+  }
 
 `;

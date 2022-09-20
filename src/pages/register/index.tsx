@@ -7,16 +7,22 @@ import * as zod from "zod"
 
 
 const newValidationSchema = zod.object({
-  name: zod.string({
-    required_error: "Name is required",
-    invalid_type_error: "Name must be a string",
-  }).min(3, { message: "Mínimo de 3 caracteres" }).max(20, { message: "Máximo de 20 caracteres" }),
+  name: zod.string().min(3, { message: "Mínimo de 3 caracteres" }).max(20, { message: "Máximo de 20 caracteres" }),
   lastName: zod.string().min(2, { message: "Mínimo de 2 caracteres"  }).max(20, { message: "Máximo de 20 caracteres" }),
   email: zod.string().email({ message: "Digite um email válido" }),
   password: zod.string().min(6, { message: "Mínimo de 6 caracteres" }).max(16, { message: "Máximo de 16 caracteres" }),
   passwordConfirm: zod.string().min(6, { message: "Mínimo de 6 caracteres" }).max(16, { message: "Máximo de 16 caracteres" }),
   
 })
+
+interface RegisterValidation {
+  name: string;
+  lastName: string;
+  email: string;
+  password: string;
+  passwordConfirm: string
+  
+}
 
 export function Register() {
 
@@ -26,7 +32,7 @@ export function Register() {
   handleSubmit,
   watch,
   formState: { errors },
- } = useForm({
+ } = useForm<RegisterValidation>({
   resolver: zodResolver(newValidationSchema),
   defaultValues: { 
     name: "",
@@ -37,7 +43,7 @@ export function Register() {
  }
 })
 
-function handleSubmitRegister(data: any) {
+function handleSubmitRegister(data: RegisterValidation) {
   console.log(data)
 }
 

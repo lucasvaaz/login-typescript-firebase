@@ -47,8 +47,11 @@ function handleSubmitRegister(data: RegisterValidation) {
   console.log(data)
 }
 
-  const registerWatch = watch("name" && "lastName" && "email" && "password" && "passwordConfirm") ;
+  const registerWatch = watch("name" && "lastName" && "email" && "password" && "passwordConfirm");
   const isSubmitDisabled = !registerWatch;
+
+  const passwordWatch = watch("password");
+  const confirmPasswordWatch = watch("passwordConfirm");
 
 console.log(errors)
 
@@ -77,7 +80,8 @@ console.log(errors)
         <label htmlFor="passwordConfirm">Confirmar senha:</label>
         <input id="passwordConfirm" type="password" {...register("passwordConfirm")} />
         <p> {errors.passwordConfirm ? ( <p> { errors.passwordConfirm.message } </p> ) : (<p> </p>) } </p>
-       
+        
+       {confirmPasswordWatch !== passwordWatch && ( <p> as senhas precisam ser iguais </p> ) }
       
         
 

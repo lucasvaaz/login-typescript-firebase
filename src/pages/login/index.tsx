@@ -3,6 +3,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
+import { auth } from "../../service/firebase";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 import {
   Divider,
   FacebookIcon,
@@ -37,8 +41,12 @@ export function Login() {
     }
   });
 
-  function handleSubmitLogin(data: LoginValidation) {
-    console.log(data);
+
+
+  async function handleSubmitLogin(data: LoginValidation) {
+   const { user } = await signInWithEmailAndPassword(auth, data.emailLogin, data.passwordLogin);
+
+   console.log(user)
   }
 
   const loginAndPassword = watch("emailLogin" && "passwordLogin");

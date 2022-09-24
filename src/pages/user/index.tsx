@@ -27,7 +27,12 @@ export function User() {
         <>
         <UserContainer>
             <h2>Olá, </h2>
-            <h2>{auth.currentUser?.email}</h2>
+            <h2>{ auth.currentUser?.displayName ?
+            auth.currentUser?.displayName :
+            auth.currentUser?.email
+              }
+              
+            </h2>
 
             <ImageProfile>
                 <div>

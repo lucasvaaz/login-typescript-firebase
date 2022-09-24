@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
-import { auth } from "../../service/firebase";
+import { auth, signInWithGoogle } from "../../service/firebase";
 
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -111,7 +111,9 @@ export function Login() {
           <FacebookIcon />
           <h3>Entre com facebook</h3>
         </div>
-        <div>
+        <div onClick={() => {
+          signInWithGoogle()
+        }}>
           <GoogleIcon />
           <h3>Entre com google</h3>
         </div>

@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
 import { auth } from "../../service/firebase";
 
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 import {
   Divider,
@@ -16,10 +16,11 @@ import {
   Register,
   WarningLogin,
 } from "./styled";
+import { useEffect, useState } from "react";
 
 const newValidationSchema = zod.object({
   emailLogin: zod.string().email({ message: "Digite um email válido" }),
-  passwordLogin: zod.string().min(6)
+  passwordLogin: zod.string().min(6),
 });
 
 interface LoginValidation {
@@ -38,15 +39,33 @@ export function Login() {
     defaultValues: {
       emailLogin: "",
       passwordLogin: "",
-    }
+    },
   });
 
 
+ 
+
+  const navigate = useNavigate();
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmitLogin(data: LoginValidation) {
-   const { user } = await signInWithEmailAndPassword(auth, data.emailLogin, data.passwordLogin);
+    try {
+      const { user } = await signInWithEmailAndPassword(
+        auth,
+        data.emailLogin,
+        data.passwordLogin
+      );
 
-   console.log(user)
+      if (user) {
+        navigate("/user");
+      }
+    } catch (err: any) {
+      if (err.code === "auth/user-not-found" || "auth/wrong-password") {
+        let errorM = "usuário e/ou senha inválido";
+        setErrorMessage(errorM);
+      }
+    }
   }
 
   const loginAndPassword = watch("emailLogin" && "passwordLogin");
@@ -61,6 +80,7 @@ export function Login() {
       <FormLogin onSubmit={handleSubmit(handleSubmitLogin)}>
         <label htmlFor="emailLogin">email</label>
         <input id="emailLogin" type="text" {...register("emailLogin")} />
+        <p>{errorMessage && errorMessage}</p>
         <div>
           <WarningLogin> {errors.emailLogin?.message} </WarningLogin>
         </div>
@@ -70,6 +90,7 @@ export function Login() {
           type="password"
           {...register("passwordLogin")}
         />
+
         <a href="#">Esqueci minha senha</a>
 
         <div>

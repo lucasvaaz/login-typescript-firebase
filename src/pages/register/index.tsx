@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../service/firebase";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const newValidationSchema = zod.object({
   
@@ -41,11 +41,15 @@ export function Register() {
     },
   });
 
+  const navigate = useNavigate()
+
   async function handleSubmitRegister(data: RegisterValidation) {
     try {
       const user = await createUserWithEmailAndPassword(auth, data.email, data.password)
       
-      console.log(user)
+      if (user) {
+        navigate("/user");
+      }
     } catch (error) {
       console.log(error);
     }

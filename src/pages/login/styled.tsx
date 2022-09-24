@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { BsGoogle, BsFacebook } from "react-icons/bs";
 
 export const FormLogin = styled.form`
+
+p {
+    font-size: 0.8rem;
+    color: ${(props) => props.theme.warning};
+  }
+  
   input {
     width: 100%;
     height: 2.5rem;
@@ -19,6 +25,7 @@ export const FormLogin = styled.form`
       outline: 2px solid ${(props) => props.theme.secundaryLight};
       border: none;
     }
+    
   }
 
   button {

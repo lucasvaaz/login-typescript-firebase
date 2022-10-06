@@ -16,7 +16,7 @@ import { Outlet } from "react-router-dom";
 
 export function DefaultLayout() {
 
-    const { isDarkTheme, setIsDarkTheme } = useContext(ChooseThemeContext);
+    const { isDarkTheme } = useContext(ChooseThemeContext);
   return (
     <Wrapper>
       <div>

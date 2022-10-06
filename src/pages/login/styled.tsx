@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { BsGoogle, BsFacebook } from "react-icons/bs";
+import { BsGoogle } from "react-icons/bs";
 
 export const FormLogin = styled.form`
 
@@ -95,7 +95,7 @@ export const LoginSocial = styled.span`
 
   div {
     display: flex;
-    width: 45%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     padding: 0.6rem;
@@ -111,11 +111,8 @@ export const LoginSocial = styled.span`
       filter: brightness(1.2)
     }
 
-    &:first-child {
-      background-color: ${(props) => props.theme.facebook};
-    }
 
-    h3 {
+    h4 {
       color: ${(props) => props.theme.buttonText}
     }
   }
@@ -129,11 +126,6 @@ export const GoogleIcon = styled(BsGoogle)`
 
 `;
 
-export const FacebookIcon = styled(BsFacebook)`
-  width: 3rem;
-  font-size: 1.4rem;
-  color: ${(props) => props.theme.buttonText};
-`;
 
 
 export const Divider = styled.div`

@@ -19,7 +19,7 @@ export const ImgContainer = styled.div`
 `;
 
 export const LoginContent = styled.main`
-  width: 40%;
+  width: 45%;
   padding: 5rem;
 
   div {

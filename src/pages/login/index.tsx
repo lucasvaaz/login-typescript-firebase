@@ -9,14 +9,13 @@ import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 import {
   Divider,
-  FacebookIcon,
   FormLogin,
   GoogleIcon,
   LoginSocial,
   Register,
   WarningLogin,
 } from "./styled";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const newValidationSchema = zod.object({
   emailLogin: zod.string().email({ message: "Digite um email válido" }),
@@ -91,7 +90,7 @@ export function Login() {
           {...register("passwordLogin")}
         />
 
-        <a href="#">Esqueci minha senha</a>
+        
 
         <div>
           <button type="submit" disabled={isSubmitDisabled}>
@@ -107,15 +106,12 @@ export function Login() {
       </Register>
       <Divider>OU</Divider>
       <LoginSocial>
-        <div>
-          <FacebookIcon />
-          <h3>Entre com facebook</h3>
-        </div>
+        
         <div onClick={() => {
           signInWithGoogle()
         }}>
           <GoogleIcon />
-          <h3>Entre com google</h3>
+          <h4>Entre com google</h4>
         </div>
       </LoginSocial>
     </>

@@ -9,7 +9,7 @@ lerna-debug.log*
 
 
 node_modules
-/src/service/*
+src/service/*
 dist
 dist-ssr
 *.local

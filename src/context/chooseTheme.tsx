@@ -13,7 +13,7 @@ interface ThemeProps {
 
 
 export function ChooseThemeProvider({ children }: ContextProps){
-    const [isDarkTheme, setIsDarkTheme] = useState<boolean >(true)
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(true)
 
 
     
